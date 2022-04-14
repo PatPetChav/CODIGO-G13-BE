@@ -36,9 +36,48 @@ while(opcion != 5):
         registros = [x.values() for x in alumnos]
         print(tabulate.tabulate(registros,cabeceras))
     elif(opcion == 3):
-        print("ACTUALIZAR ALUMNO")
+        print("ACTUALIZAR ALUMNO")   
+        #paso 1 busvar el alumno
+        valorBusqueda = input("Ingrese el emial del alumno a actualizar : ")     
+        indexAlumno = -1
+        for i in range(len(alumnos)):
+            dicAlumnoBusqueda = alumnos[i]
+            for clave,valor in dicAlumnoBusqueda.items():
+                if(valor == valorBusqueda and clave == "email"):
+                    indexAlumno = i
+                    break
+        if(indexAlumno == -1):
+            print("No se encontró el email del alumno")
+        else:
+            nombre  = input("NOMBRE  : ")
+            email   = input("EMAIL   : ")
+            celular = input("CELULAR : ")
+            dictAlumnoEditar = {
+                'nombre':nombre,
+                'email':email,
+                'celular':celular
+            }
+            #paso 3 actualizar los datos del alumno a editar
+            alumnos[indexAlumno] = dictAlumnoEditar
+            print("ALUMNO ACTUALIZADO !!!")
     elif(opcion == 4):
         print("ELIMINAR ALUMNO")
+        print("ACTUALIZAR ALUMNO")   
+        #paso 1 busCar el alumno
+        valorBusqueda = input("Ingrese el email del alumno a eliminar : ")     
+        indexAlumno = -1
+        for i in range(len(alumnos)):
+            dicAlumnoBusqueda = alumnos[i]
+            for clave,valor in dicAlumnoBusqueda.items():
+                if(valor == valorBusqueda and clave == "email"):
+                    indexAlumno = i
+                    break
+        if(indexAlumno == -1):
+            print("No se encontró el email del alumno")
+        else:
+            #paso 3 eliminar alumno
+            alumnos.pop[indexAlumno] 
+            print("ALUMNO ELIMINADO !!!")
     elif(opcion == 5):
         print("FINALIZANDO PROGRAMA")
     else:
