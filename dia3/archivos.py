@@ -1,10 +1,18 @@
 """
+f = open('cursos.txt','w')
+f.write('JavaScript,Dante Ruiz\n')
+f.write('Introduccion a Redes,Benedicto Vilca\n')
+f.write('Inteligencia Artificial,Javier Alfaro\n')
+f.write('Teoria de Juegos,Carlos Maldonado\n')
+"""
+
+"""
 f = open('alumnos.txt','w')
 f.write('cesar mayta,cesarmayta@gmail.com,242332\n')
 f.write('ana lopez,ana@gmail.com,2232323\n')
 f.write('jorge perez,jorge@gmail.com,242332')
 """
-
+"""
 f = open('alumnos.txt','r')
 alumnos = f.read()
 print(alumnos)
@@ -26,3 +34,4 @@ for dictAlumno in listaAlumnos:
 
 print(listaResultado)
 f.close
+"""
